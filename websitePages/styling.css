@@ -1,0 +1,190 @@
+/*  Do the body as a flex container.  
+Middle three sections need flex: 1;
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+}
+
+.main-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #f9faf8;
+    margin-bottom: 6px;
+}
+.intro,
+.info,
+.quote,
+.callToAction {
+    flex: 1;
+    padding: 32px 200px;
+}
+.header {
+    display: flex;
+    background-color: #1f2937;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 200px;
+
+}
+
+.button.sign-up {
+    color: #e5e7eb;
+    background-color: #3882f6;
+    border: none;
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 6px 25px;
+}
+
+.left-header {
+    color: #f9faf8;
+    font-size: 24px;
+    font-weight: 500;
+}
+.right-header {
+    font-weight: 100;
+}
+
+.title-subtext {
+    color: #e5e7eb;
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 6px;
+}
+
+.intro {
+    display: flex;
+    gap: 200px;
+    justify-content: space-between;
+    background-color: #1f2937;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.intro-right {
+    max-width: 300px;
+    object-fit: contain;
+}
+.info .title {
+    text-align: center;
+    color: #1f2937;
+    font-size: 32px;
+    font-weight: 900;
+    padding-top: 30px;
+}
+.cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 90px;
+}
+
+.item {
+    margin-top: 20px;
+    align-self: center;
+    max-width: 200px;
+    font-size: 18px;
+}
+
+.item p {
+    color:#575757;
+}
+
+.quote {
+    font-size: 36px;
+    font-weight: 200;
+    background-color: #e5e7eb;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 320px;
+    padding-right: 320px;
+}
+
+.quote-text {
+    max-width: 800px;
+
+}
+
+.author {
+    text-align: end;
+    font-size: 20px;
+
+}
+
+.cards img {
+    object-fit: contain;
+    width: 100px;
+    height: 100px;
+}
+
+.footer {
+    background-color: #1f2937;
+    color: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 200px;
+}
+
+a {
+    text-decoration: none;
+    color: #e5e7eb;
+    font-size: 18px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 16px;
+
+}
+
+.callToAction {
+    display: flex;
+    margin: 90px 200px;
+    border-radius: 8px;
+    background-color: #3882f6;
+    justify-content: space-between;
+    gap: 120px;
+    padding: 40px 110px;
+  
+    
+}
+.alert.title {
+    font-size: 20px;
+    color: #f9faf8;
+    font-weight: 700;
+
+}
+.alert.text {
+    color: #e5e7eb;
+
+}
+
+.callToAction button {
+    background-color: #3882f6;
+    color: #f9faf8;
+    border: solid;
+    border-color: #f9faf8;
+    border-width: 2px;
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 6px 35px;
+}
