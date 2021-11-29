@@ -13,5 +13,25 @@
         <p><a href="./pages/images.html">Images Practice</a></p>
         <p><a href="./odin-recipes.html">Project</a></p>
         <p><a href="./websitePages/landingpage.html">Website with CSS, Flexbox and HTML <strong> -- NEW!! -- </strong></a></p>
+        <p><a href="./troubleshooting.html">Troubleshooting practice <strong> -- NEW!! -- </strong></a></p>
+        <p><a href="./rockPaperScissors/index2.html">Rock Paper Scissors <strong> -- NEW!! -- </strong></a></p>
+        <script>
+            /*
+            Write a function called lastLetter that takes a string and returns the very last letter of that string:
+            lastLetter("abcd") should return "d" */
+
+            function capitalize(subject){
+                let lower = subject.toLowerCase();
+                let first = lower.charAt(0);
+                return first.toUpperCase() + lower.slice(1);
+            }
+
+            function lastLetter(subject){
+                return subject.slice(subject.length - 1);
+            }
+
+            console.log(capitalize("HELLO DEAR"));
+            console.log(lastLetter("cool beans and bacon"));
+        </script>
     </body>
 </html>
