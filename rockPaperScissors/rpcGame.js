@@ -1,3 +1,32 @@
+let computerChoice;
+let currentChoice;
+let playerPoints = 0;
+let computerPoints = 0;
+const options = document.querySelectorAll('img');
+const winMsg = document.querySelector('.win');
+const choicesMsg = document.querySelector('.choices');
+const scoreMsg = document.querySelector('.score');
+
+options.forEach((option) => {
+    option.addEventListener('click', () => {
+        option.classList.add('clicked');
+        let results = playRound(`${option.id}`, computerPlay());
+        currentChoice = option.id;
+        if(results == "You win!"){
+            playerPoints++;
+        } else if(results == "You lost!"){
+            computerPoints++;
+        }
+        if(playerPoints >= 5 || computerPoints >= 5){
+            gameEnd();
+        } else {
+            winMsg.textContent = `${results}`;
+            choicesMsg.textContent = `The computer chose ${computerChoice}, and you chose ${currentChoice}`;
+            scoreMsg.textContent = `Player: ${playerPoints}. Computer: ${computerPoints}.`;
+        }
+        setTimeout(() => option.classList.remove('clicked'), 100);
+    });
+});
 
 function computerPlay() { //chooses rock, paper or scissors
     let options = ["rock", "paper", "scissors"];
@@ -7,7 +36,7 @@ function computerPlay() { //chooses rock, paper or scissors
 
 function playRound(playerSelect, computerSelect){
     playerSelect = playerSelect.toLowerCase();
-    console.log(playerSelect + " VS " + computerSelect)
+    computerChoice = computerSelect;
     if(playerSelect == computerSelect){
         return "It's a tie!";
     } else if(playerSelect == "rock"){
@@ -31,29 +60,36 @@ function playRound(playerSelect, computerSelect){
     } else {
         return "Please enter rock, paper or scissors"
     }
-
 }
-function game(){
-    let playerPoints = 0;
-    let computerPoints = 0;
-    for(let i = 0; i < 5; i++){
-        let answer = window.prompt(`Enter scissors, paper or rock! This is round ${i} out of 5`);
-        let results = playRound(answer, computerPlay());
-        if(results == "You win!"){
-            playerPoints++;
-        } else if(results == "You lost!"){
-            computerPoints++;
-        }
-        console.log(results + " You have " + playerPoints + " and the computer has " + computerPoints);
-    }
+function gameEnd(){
+    let results;
+    let score;
     if(playerPoints > computerPoints){
-        return "You win the game!";
+        results = "You win the game!";
+        let difference = playerPoints - computerPoints;
+        if(difference == 1){
+            score = `You won by ${difference} point`
+        } else {
+            score = `You won by ${difference} points`
+        }
+        
     } else if(playerPoints < computerPoints){
-        return "You lost! Try again next time!";
+        results = "You lost! Try again next time!";
+        let difference = computerPoints - playerPoints;
+        if(difference == 1){
+            score = `You lost by ${difference} point`
+        } else {
+            score = `You lost by ${difference} points`
+        }
     } else {
-        return "There were no winners...this time";
+        results = "There were no winners...this time";
     }
+    
+    winMsg.textContent = results;
+    choicesMsg.textContent = `Player had: ${playerPoints} points. Computer had: ${computerPoints} points.`;
+    scoreMsg.textContent = score;
+    playerPoints = 0;
+    computerPoints = 0;
 
+    return results;
 }
-
-console.log(playRound('Rock', computerPlay()));
