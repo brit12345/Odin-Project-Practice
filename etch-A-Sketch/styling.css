@@ -14,7 +14,7 @@ body {
 
 .grid {
     display: flex;
-    background-color: rgb(99, 99, 99);
+    background-color: 'white';
     width: 600px;
     height: 600px;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.5);
@@ -36,6 +36,10 @@ body {
 
 .colorGrid {
     display: flex;
+}
+
+#myRange {
+    margin-top: -30px;
 }
 
 button {
@@ -105,5 +109,5 @@ p {
     font-size: 40px;
     margin-bottom: -20px;
     margin-left: 40px;
-    color:rgb(110, 44, 0)
+    color:rgb(110, 44, 0);
 }
