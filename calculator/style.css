@@ -1,0 +1,57 @@
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    height: 500px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    width: 60px;
+    height: 50px;
+    font-size: 20px;
+    border: solid;
+    border-radius: 8px;
+}
+#minus, #dot {
+    font-size: 28px;
+}
+#factorial, #divide {
+    font-size: 24px;
+}
+
+#display {
+    background-color: rgb(165, 165, 165);
+    border: solid;
+    width: 260px;
+    height: 90px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc {
+    display: flex;
+    background-color: grey;
+    flex-direction: column;
+    border: solid;
+    justify-content: center;
+    align-items: center;
+    width: 310px;
+    height: 510px;
+    border-radius: 19px;
+}
