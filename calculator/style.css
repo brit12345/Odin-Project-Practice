@@ -1,3 +1,4 @@
+/* button layout */
 .buttonContainer {
     display: flex;
     justify-content: center;
@@ -13,6 +14,8 @@
     gap: 20px;
 }
 
+
+/* button styling */
 button {
     width: 60px;
     height: 50px;
@@ -26,16 +29,41 @@ button {
 #factorial, #divide {
     font-size: 24px;
 }
+.operator {
+    background-color:rgb(185, 229, 255);
+}
+.column.operators button {
+    background-color: rgb(89, 194, 255);
+}
 
+/* display styling */
 #display {
-    background-color: rgb(165, 165, 165);
+    background-color: rgb(201, 201, 201);
     border: solid;
     width: 260px;
     height: 90px;
     margin-top: 20px;
     border-radius: 8px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
 }
 
+#current-number {
+    font-size: 35px;
+    margin-right: 4px;
+}
+
+#history {
+    margin-right: 4px;
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+/* page and calc background */
 body {
     display: flex;
     height: 100vh;

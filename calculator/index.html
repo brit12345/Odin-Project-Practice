@@ -10,30 +10,33 @@
 </head>
 <body>
     <div class='calc'>
-        <div id='display'></div>
+        <div id='display'>
+            <div id='history'></div>
+            <div id='current-number'></div> <!-- can fit 11 digits-->
+        </div>
         <div class='buttonContainer'>
             <div class='column'>
                 <button id='AC' class='operator'>AC</button>
-                <button id='7'>7</button>
-                <button id='4'>4</button>
-                <button id='1'>1</button>
-                <button id='0'>0</button>
-            </div>
-            <div class='column'>
-                <button id='sqrt' class='operator'>√</button>
-                <button id='8'>8</button>
-                <button id='5'>5</button>
-                <button id='2'>2</button>
+                <button id='7' class='num'>7</button>
+                <button id='4' class='num'>4</button>
+                <button id='1' class='num'>1</button>
                 <button id='dot' class='operator'>.</button>
             </div>
             <div class='column'>
-                <button id='factorial' class='operator'>!</button>
-                <button id='9'>9</button>
-                <button id='6'>6</button>
-                <button id='3'>3</button>
-                <button id='sign' class='operator'>+/-</button>
+                <button id='sqrt' class='operator'>√</button>
+                <button id='8' class='num'>8</button>
+                <button id='5' class='num'>5</button>
+                <button id='2' class='num'>2</button>
+                <button id='0' class='num'>0</button>
             </div>
             <div class='column'>
+                <button id='factorial' class='operator'>!</button>
+                <button id='9' class='num'>9</button>
+                <button id='6' class='num'>6</button>
+                <button id='3' class='num'>3</button>
+                <button id='sign' class='operator'>+/-</button>
+            </div>
+            <div class='column operators'>
                 <button id='divide' class='operator'>÷</button>
                 <button id='multiply' class='operator'>x</button>
                 <button id='minus' class='operator'>-</button>
@@ -46,5 +49,3 @@
     
 </body>
 </html>
-
-<!-- current number, when operator pressed make it a past number by adding it to an array. clear empties the array. current total?-->
