@@ -1,0 +1,188 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+header {
+    background-color: rgb(83, 83, 83);
+    width: 99.8vw;
+    height: 96px;
+    margin: 2px;
+}
+
+nav {
+    background-color:rgb(165, 165, 165);
+    width: 99.8vw;
+    height: 63px;
+    margin: 2px;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 150px;
+}
+
+main {
+    width: 664px;
+    flex-shrink: 1;
+}
+
+aside {
+    background-color: rgb(124, 124, 124);
+    height: 800px;
+    width: 376px;
+    flex-shrink: 1;
+}
+
+#cards {
+    width: 100vw;
+    height: 451px;
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.more {
+    width: 200px;
+    height: 50px;
+    background-color:rgb(211, 211, 211);
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+article {
+    width: 100%;
+    height: 40%;
+}
+
+.title {
+    display: flex;
+    width: 100%;
+    height: 65%;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+
+.img {
+    width: 30%;
+    height: 70%;
+    background: rgb(99, 99, 99);
+}
+
+.info {
+    width: 64%;
+    height: 100%;
+}
+
+.byline {
+    background: rgb(165, 165, 165);
+    width: 40%;
+    height: 10%;
+}
+
+.heading {
+    background: rgb(51, 51, 51);
+    width: 100%;
+    height: 78%;
+    margin-top: 4px;
+}
+
+.date {
+    background: rgb(192, 192, 192);
+    width: 60%;
+    height: 8%;
+    margin-top: 4px;
+
+}
+
+.p {
+    background:rgb(141, 141, 141);
+    width: 100%;
+    height: 200px;
+    margin-top: 30px;
+}
+
+.continue {
+    background:rgb(114, 114, 114);
+    width:30%;
+    height: 24px;
+    margin-top: 20px;
+}
+
+.article {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.article.one {
+    margin-top: 180px;
+}
+
+.image {
+    background:rgb(141, 140, 140);
+    width: 150px;
+    margin: 10px;
+    margin-left: 0;
+}
+
+.sideContainer {
+    width: 80%;
+    height: 80%;
+}
+
+.subtext {
+    background:rgb(165, 165, 165);
+    width: 99%;
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+.articleTitle {
+    background:rgb(95, 95, 95);
+    width: 99%;
+    height: 97%;
+    margin: 5px;
+    margin-right: 0;
+
+}
+
+.card {
+    border: solid grey 1px;
+    width: calc(374px - 80px);
+    height: calc(100% - 80px);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.cardTitle {
+    background:rgb(133, 133, 133);
+    width: 100%;
+    height: 30%;
+}
+
+.description {
+    background:rgb(165, 165, 165);
+    width: 100%;
+    height: calc(40% - 20px);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button {
+    background:rgb(110, 110, 110);
+    width: 100%;
+    height: 30%;
+    border-radius: 20px;
+
+}

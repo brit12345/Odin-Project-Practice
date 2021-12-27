@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* background-image: url("http://images.apple.com/global/nav/images/globalnav_text.svg"); */
+
+/* css grid */
+#grid {
+    display: grid;
+    height: 100vh;
+    grid-template: 65% 25% 1fr / repeat(4, 25%);
+    justify-items: center;
+}
+
+.main {
+    grid-column: 1 / span 4;
+    background-color: rgba(0, 0, 255, 0.329);
+}
+
+footer {
+    grid-column: 1 / span 4;
+    background: green;
+    width: 100vw;
+}
+
+/* overall styling */
+a {
+    text-decoration: none;
+
+}
+
+ul {
+    display: flex;
+    text-align: center;
+    list-style: none;
+}
+
+li {
+    line-height: 12px;
+    margin-left: 6px;
+    padding-left: 6px;
+    border-left: solid;
+    border-left-color: rgb(204, 204, 204);
+    border-left-style: solid;
+    border-left-width: 1px;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    font-size: 10px;
+}
+
+
+li img {
+    margin-top: -50%;
+    margin-bottom: -5px;
+}
+
+li:first-child {
+    margin-left: 0;
+    border: none;
+}
+
+/* header */
+
+header ul {
+    display: flex;
+    list-style: none;
+
+}
+
+header li {
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+
+}
+
+
+/* remove padding from the very left of lists? could actually just do first child, didnt need a class*/
