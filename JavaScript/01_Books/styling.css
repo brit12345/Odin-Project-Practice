@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*:focus, *:focus-visible {
+  outline: none;
+  outline-color: black;
+  outline-width: 30px;
+  box-shadow: 3px 3px 3px 3px black;
+  border: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  height: 50px;
+  width: 100px;
+}
+
+.delete:hover {
+  background: rgb(155, 1, 1);
+  cursor: pointer;
+}
+
+form button:hover, #new:hover {
+  background: rgb(0, 110, 0);
+  cursor: pointer;
+}
+form button, #new {
+  background: green;
+  display: block;
+}
+
+button.status {
+  background: rgb(52, 52, 253);
+}
+button.status:hover {
+  background: rgb(44, 44, 211);
+  cursor: pointer;
+}
+
+button#close {
+  position: absolute;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 1000px;
+  background: grey;
+  right: 4px;
+  top: -20px;
+}
+
+/* title */
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+header {
+  background: linear-gradient(blue, rgb(0, 0, 134));
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 25px;
+}
+
+/* new book button */
+#new {
+  margin-left: auto;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+/* delete button */
+.delete {
+  background: rgb(194, 0, 0);
+}
+
+/* form */
+.appear {
+  position: absolute;
+  top: 50%;  
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+
+}
+
+form {
+  border: 3px solid grey;
+  border-radius: 20px;
+  padding: 40px;
+  background-color: white;
+  position: relative;
+}
+form h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+#title, #author {
+  margin-bottom: 25px;
+}
+form p {
+  margin-bottom: 3px;
+}
+.radio.flex {
+  gap: 20px;
+}
+form button {
+  width: 90%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+#pages {
+  width: 25%;
+  margin-bottom: 25px;
+}
+label {
+  margin-bottom: 3px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.darken {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+label {
+  display: block;
+}
+
+/* table */
+table {
+  width: 100vw;
+  text-align: center;
+  border-collapse: collapse;
+}
+th {
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+td, th {
+  width: 20%;
+  border-bottom: 1px solid rgb(206, 206, 206);
+}
+tr {
+  height: 70px;
+ 
+}
+tr:last-child td{
+  border: none;
+}
+
+#headings {
+  height: auto;
+}

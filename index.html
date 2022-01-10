@@ -1,42 +1,37 @@
 <!DOCTYPE html>
+<html lang="en"></html>
 <html>
-    <head>
-        <meta charset ='utf-8'/>
-        <title>links and images</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Odin Project...Projects</title>
+    <link rel="stylesheet" href="./styling.css"/>
+</head>
 
-    <body>
-        <h1>Homepage</h1>
-        <p><a href="https://www.google.com">Google!</a> So you can go to a website better than this one!</p>
-        <p><a href="./pages/lists.html">List Practice</a></p>
-        <p><a href="./pages/bold and italics.html">Bold and Italics Practice</a></p>
-        <p><a href="./pages/images.html">Images Practice</a></p>
-        <p><a href="./odin-recipes.html">Recipes</a></p>
-        <p><a href="./websitePages/landingpage.html">Website with CSS, Flexbox and HTML</a></p>
-        <p><a href="./troubleshooting.html">Troubleshooting practice</a></p>
-        <p><a href="./rockPaperScissors/index2.html">Rock Paper Scissors</a></p>
-        <p><a href="./jsStyling/index3.html">DOM Manipulation with JS</a></p>
-        <p><a href="./etch-A-Sketch/index.html">Etch-A-Sketch</a></p>
-        <p><a href="./calculator/index.html">Calculator<strong> -- NOT COMPLETE -- </strong></a></p>
-        <p><a href="./HTMLForms/index.html">Sign Up Form</a></p>
-        <p><a href="./Apple/index.html">2014 Apple Homepage Copy</a></p>
-        <p><a href="./visual-hierarchy/index.html">Visual Hierarchy of Pages</a></p>
-        <p><a href="./responsive/index.html">Responsive Website (Adjust the browser size!)<strong> -- NEW!! -- </strong></a></p>
-        <p><a href="./grid-framework/index.html">Grid Framework<strong> -- NEW!! -- </strong></a></p>
+<body>
+    <h1>Homepage</h1>
+    <a href="./Foundations"><div>Foundations Projects</div></a>
+    <a href="./HTML_CSS"><div>HTML & CSS Projects</div></a>
+    <a href="./JavaScript">
+        <div>Javascript Projects
+            <p><strong> -- NEW!! -- </strong></p>
+        </div>
+    </a>
 
-        <script>
-            function capitalize(subject){
-                let lower = subject.toLowerCase();
-                let first = lower.charAt(0);
-                return first.toUpperCase() + lower.slice(1);
-            }
+    <script>
+        function capitalize(subject){
+            let lower = subject.toLowerCase();
+            let first = lower.charAt(0);
+            return first.toUpperCase() + lower.slice(1);
+        }
 
-            function lastLetter(subject){
-                return subject.slice(subject.length - 1);
-            }
+        function lastLetter(subject){
+            return subject.slice(subject.length - 1);
+        }
 
-            console.log(capitalize("HELLO DEAR"));
-            console.log(lastLetter("cool beans and bacon"));
-        </script>
-    </body>
+        console.log(capitalize("HELLO DEAR"));
+        console.log(lastLetter("cool beans and bacon"));
+    </script>
+</body>
 </html>
