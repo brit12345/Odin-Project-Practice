@@ -174,6 +174,7 @@ function popup(){ //toggles popup hide and show
 function tabs(){ //focusable and not
   if(form.classList[0] == "appear"){
     closeBtn.tabIndex = "0";
+    closeBtn.focus();
     addBtn.tabIndex = "0";
     title.tabIndex = "0";
     author.tabIndex = "0";
