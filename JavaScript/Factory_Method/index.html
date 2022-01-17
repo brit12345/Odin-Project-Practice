@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factory Method</title>
+</head>
+<body>
+  <script>
+    const dogFactory = (breed) => {
+      const bark = () => console.log("woof")
+      return {breed, bark}
+    }
+   
+
+    const Labrador = () => {
+      const species = "Labrador"
+      const prototype = dogFactory(species)
+      const beg = () => console.log("pls I'm starving")
+      return Object.assign({beg}, prototype);
+    }
+
+    const Misha = Labrador("Labrador")
+    Misha.bark();
+    console.log(Misha.breed)
+    Misha.beg();
+  </script>
+  
+</body>
+</html>

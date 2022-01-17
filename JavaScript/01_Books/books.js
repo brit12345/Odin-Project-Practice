@@ -17,20 +17,14 @@ let author = document.querySelector("#author")
 let pages = document.querySelector("#pages")
 let read = document.querySelector("#yes")
 
-//placeholder book
-let frankenstein = new Book("Frankenstein", "Mary Shelley", 439, "Read");
-addBookToLibrary(frankenstein);
-
-updateTable();
-tabs();
-permanentButtons();
-
-function Book(title, author, pages, read){
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = read
-  this.info = function() {
+class Book {
+  constructor(title, author, pages, read){
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+  }
+  info() {
     let status;
     if(this.read){
       status = "already read"
@@ -40,6 +34,15 @@ function Book(title, author, pages, read){
     return `${this.title} by ${this.author}, ${this.pages} pages, ${status}`;
   }
 }
+
+//placeholder book
+let frankenstein = new Book("Frankenstein", "Mary Shelley", 439, "Read");
+addBookToLibrary(frankenstein);
+
+
+updateTable();
+tabs();
+permanentButtons();
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
