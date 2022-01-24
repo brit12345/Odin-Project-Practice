@@ -1,6 +1,5 @@
-//players to put in their names, include a button to start/restart the game
 const section = document.querySelector("section");
-const gameBoard = (() => { //draw and update gameBoard. Not for pressing logic????
+const gameBoard = (() => { //draw, update and delete gameBoard
   let board = ["", "", "", "", "", "", "", "", ""];
   const empty = ["", "", "", "", "", "", "", "", ""];
   let boardA = document.createElement("div");
@@ -71,15 +70,16 @@ const game = (() => {
   const resetBtn = document.querySelector(".reset")
 
   const start = function() {
-    //initialise players depending on their selection?
     const p1 = document.querySelector("input#p1")
     const p2 = document.querySelector("input#p2")
     game.player1 = Player("X", true, p1.value)
     game.player2 = Player("O", false, p2.value)
+
     const startBtn = document.querySelector(".start")
     const resetBtn = document.querySelector(".reset")
     startBtn.classList.toggle("hide")
     resetBtn.classList.toggle("hide")
+
     const inputX = document.querySelector("div#X")
     inputX.style.borderBottom = "black 3px solid"
   }
@@ -102,8 +102,6 @@ const game = (() => {
       const score = document.querySelector("#score")
       score.textContent = "Score: " + game.player1.score + ":" + game.player2.score;
     })
-    
-
   }
 
   const press = function(square) {
@@ -242,10 +240,6 @@ const game = (() => {
   }
 
   const end = function(player, type) {
-    //can see who won, and which type of end (tie, row etc.)
-    //reset
-    //display win thing for a couple seconds before reset
-
     setTimeout(gameBoard.reset, 2000)
     message.classList.add("centered")
 
@@ -262,8 +256,6 @@ const game = (() => {
     score.textContent = "Score: " + game.player1.score + ":" + game.player2.score;
     message.textContent = result
     message.classList.remove("hidden") //make visible
-
-    
 
     section.appendChild(message)
     setTimeout(hideMessage, 2000)
@@ -305,7 +297,7 @@ const game = (() => {
   }
 })() //end game
 
-const Player = (type, turn, name) => { //overall class, subclasses that change x and o? just to practice
+const Player = (type, turn, name) => {
   this.type = type;
   this.name = name;
   this.turn = turn; 
@@ -315,9 +307,9 @@ const Player = (type, turn, name) => { //overall class, subclasses that change x
     name,
     turn,
     score
-  } //static variables for number of wins?
+  }
 }
-game.player1 = Player("X", true, p1.value)
+game.player1 = Player("X", true, p1.value) //pre-create player to stop error messages
 game.player2 = Player("O", false, p2.value)
 gameBoard.draw(); //draw board first
 
