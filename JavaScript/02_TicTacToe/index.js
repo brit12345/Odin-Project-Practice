@@ -1,3 +1,4 @@
+//players to put in their names, include a button to start/restart the game
 const section = document.querySelector("section");
 const gameBoard = (() => { //draw and update gameBoard. Not for pressing logic????
   let board = ["", "", "", "", "", "", "", "", ""];
@@ -15,6 +16,7 @@ const gameBoard = (() => { //draw and update gameBoard. Not for pressing logic??
       if(div.textContent == "X"){ //colouring and tab index
         div.tabIndex = "-1";
         div.style.background = "rgb(253, 228, 175)"
+        div.style.borderBottom = "100px"
       } else if(div.textContent == "O"){
         div.tabIndex = "-1";
         div.style.background = "rgb(175, 225, 253)"
@@ -22,7 +24,8 @@ const gameBoard = (() => { //draw and update gameBoard. Not for pressing logic??
         div.tabIndex = "0";
         div.style.background = "white"
       }
-      
+     
+
       boardA.appendChild(div)
     }
     section.appendChild(boardA)
@@ -42,8 +45,8 @@ const gameBoard = (() => { //draw and update gameBoard. Not for pressing logic??
   const reset = function() {
     gameBoard.board = [...empty];
     update();
-    
   }
+
 
   return {
     board,
@@ -60,11 +63,25 @@ const game = (() => {
   let type;
   let result;
   let player;
+  let player1;
+  let player2;
   let turn = "X"
   let message = document.createElement("p")
+  const startBtn = document.querySelector(".start")
+  const resetBtn = document.querySelector(".reset")
 
   const start = function() {
     //initialise players depending on their selection?
+    const p1 = document.querySelector("input#p1")
+    const p2 = document.querySelector("input#p2")
+    game.player1 = Player("X", true, p1.value)
+    game.player2 = Player("O", false, p2.value)
+    const startBtn = document.querySelector(".start")
+    const resetBtn = document.querySelector(".reset")
+    startBtn.classList.toggle("hide")
+    resetBtn.classList.toggle("hide")
+    const inputX = document.querySelector("div#X")
+    inputX.style.borderBottom = "black 3px solid"
   }
 
   const buttons = function() {
@@ -72,14 +89,39 @@ const game = (() => {
     squares.forEach((square) => {
       square.addEventListener("click", () => press(square))
     })
+
+    startBtn.addEventListener("click", () => {
+      start()
+      const score = document.querySelector("#score")
+      score.textContent = "Score: " + game.player1.score + ":" + game.player2.score;
+    })
+    resetBtn.addEventListener("click", () => {
+      gameBoard.reset()
+      game.player1.score = 0;
+      game.player2.score = 0;  
+      const score = document.querySelector("#score")
+      score.textContent = "Score: " + game.player1.score + ":" + game.player2.score;
+    })
+    
+
   }
 
   const press = function(square) {
     if(spaceFree(square.dataset.index)){ //make sure space is free
       gameBoard.board[square.dataset.index] = turn;
       square.textContent = turn;
-
+      const inputX = document.querySelector("div#X")
+      const inputO = document.querySelector("div#O")
       turn = changePlayer(turn)
+      if(turn == "X"){
+        inputX.style.borderBottom = "black 3px solid"
+        inputO.style.borderBottom = "none"
+
+      } else if (turn == "O"){
+        inputO.style.borderBottom = "black 3px solid"
+        inputX.style.borderBottom = "none"
+      
+      }
       
       gameBoard.update();
       let status = game.checkEnd()
@@ -210,12 +252,18 @@ const game = (() => {
     if(type == "tie"){
       result = "It's a Draw!"
     } else if(player == "X") {
-      result = "X Won!"
+      result = (game.player1.name || "X") + " Won!"
+      game.player1.score++
     } else if(player == "O") {
-      result = "O Won!"
+      result = (game.player2.name || "O") + " Won!"
+      game.player2.score++
     }
+    const score = document.querySelector("#score")
+    score.textContent = "Score: " + game.player1.score + ":" + game.player2.score;
     message.textContent = result
     message.classList.remove("hidden") //make visible
+
+    
 
     section.appendChild(message)
     setTimeout(hideMessage, 2000)
@@ -249,19 +297,28 @@ const game = (() => {
     count3,
     diagonal,
     end,
-    message
+    message,
+    player1,
+    player2,
+    startBtn,
+    resetBtn
   }
 })() //end game
 
-const Players = (type, turn) => { //overall class, subclasses that change x and o? just to practice
+const Player = (type, turn, name) => { //overall class, subclasses that change x and o? just to practice
   this.type = type;
-  this.turn = turn; //keeps track of whether it's their turn? Should be in controller?
+  this.name = name;
+  this.turn = turn; 
+  this.score = 0;
   return {
-    type
+    type,
+    name,
+    turn,
+    score
   } //static variables for number of wins?
 }
-
-
+game.player1 = Player("X", true, p1.value)
+game.player2 = Player("O", false, p2.value)
 gameBoard.draw(); //draw board first
 
 
