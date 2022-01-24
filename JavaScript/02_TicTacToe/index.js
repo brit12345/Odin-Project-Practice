@@ -11,8 +11,18 @@ const gameBoard = (() => { //draw and update gameBoard. Not for pressing logic??
       div.textContent = gameBoard.board[square];
       div.classList.add("square");
       div.dataset.index = square;
-      div.tabIndex = "0";
-      //add event listeners here? Or go through each child of boardA and add it there? part of game controller?
+
+      if(div.textContent == "X"){ //colouring and tab index
+        div.tabIndex = "-1";
+        div.style.background = "rgb(253, 228, 175)"
+      } else if(div.textContent == "O"){
+        div.tabIndex = "-1";
+        div.style.background = "rgb(175, 225, 253)"
+      } else {
+        div.tabIndex = "0";
+        div.style.background = "white"
+      }
+      
       boardA.appendChild(div)
     }
     section.appendChild(boardA)
@@ -32,6 +42,7 @@ const gameBoard = (() => { //draw and update gameBoard. Not for pressing logic??
   const reset = function() {
     gameBoard.board = [...empty];
     update();
+    
   }
 
   return {
@@ -67,7 +78,9 @@ const game = (() => {
     if(spaceFree(square.dataset.index)){ //make sure space is free
       gameBoard.board[square.dataset.index] = turn;
       square.textContent = turn;
+
       turn = changePlayer(turn)
+      
       gameBoard.update();
       let status = game.checkEnd()
       if(status.result){
@@ -238,7 +251,7 @@ const game = (() => {
     end,
     message
   }
-})()
+})() //end game
 
 const Players = (type, turn) => { //overall class, subclasses that change x and o? just to practice
   this.type = type;
