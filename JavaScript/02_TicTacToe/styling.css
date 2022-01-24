@@ -19,11 +19,15 @@ body {
 }
 
 .square {
+  background: none;
+  box-shadow: none;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
   font-size: 50px;
+  cursor: pointer;
 }
 
 section {
@@ -31,4 +35,22 @@ section {
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+.centered {
+  position: absolute;
+  display: block;
+  top: 50%;  
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  font-size: 50px;
+  color: grey;
+  padding: 200px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0));
+  text-align: center;
+  width: max-content;
+}
+
+.hidden {
+  display: none;
 }
