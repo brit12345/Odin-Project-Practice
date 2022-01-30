@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('./Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.hello {
+  color: red;
+  background: url('./icon.png');
+  font-family: 'MyFont';
+}
+
+
