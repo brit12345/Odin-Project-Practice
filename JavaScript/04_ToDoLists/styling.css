@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button {
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  height: 50px;
+  width: 100px;
+}
+form button, #new {
+  background: green;
+  display: block;
+}
+form button:hover, #new:hover {
+  background: rgb(0, 110, 0);
+  cursor: pointer;
+}
+/* form */
+form {
+  border: 3px solid grey;
+  border-radius: 20px;
+  padding: 40px;
+  background-color: white;
+  position: relative;
+  width: 40%;
+  height: 60%;
+  text-align: center;
+}
+
+input, textarea {
+  display: block;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+textarea {
+  max-height: 66px;
+  max-width: 90%;
+}
+
+form .slidecontainer, input#priority {
+  margin-bottom: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+label[for="notes"] {
+  margin-top: 30px;
+}
+label[for="title"] {
+  margin-top: 3px;
+}
+
+
+
+
+.appear {
+  position: absolute;
+  top: 50%;  
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+
+}
+
+.hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.darken {
+  position: absolute;
+  width: 102vw;
+  height: 102vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+button#close {
+  position: absolute;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 1000px;
+  background: grey;
+  right: 4px;
+  top: -20px;
+}
+
+form button {
+  width: 90%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+/* header */
+
+header {
+  height: 100px;
+  width: 100vw;
+  background: linear-gradient(rgb(116, 223, 255), rgb(0, 166, 216) 80%);
+  flex: 0 0 auto;
+}
+
+h1 {
+  margin-left: 30px;
+  line-height: 100px; /* line height as big as container */
+}
+
+/* main area - section */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+section { 
+  display: flex; 
+  flex: 1 1 auto;
+}
+
+nav {
+  width: 350px;
+  flex: 0 1 auto;
+  background:rgb(222, 247, 255);
+  border: 7px solid rgb(218, 246, 255);
+  padding: 20px;
+}
+article {
+  flex: 1 1 auto;
+}
+
+
+
+
+
+
+
+
+
+/* slider CSS from https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+.slidecontainer {
+  width: 60%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 15px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 4px;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
