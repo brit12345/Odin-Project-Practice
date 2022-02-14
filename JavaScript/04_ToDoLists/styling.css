@@ -19,6 +19,11 @@ form button:hover, #new:hover {
   background: rgb(0, 110, 0);
   cursor: pointer;
 }
+#new {
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 20px;
+}
 /* form */
 form {
   border: 3px solid grey;
@@ -132,19 +137,26 @@ section {
 }
 
 nav {
-  width: 350px;
-  flex: 0 1 auto;
+  width: 250px;
+  flex: 0 2 auto;
   background:rgb(222, 247, 255);
   border: 7px solid rgb(218, 246, 255);
   padding: 20px;
 }
 article {
+  width: 80%;
   flex: 1 1 auto;
 }
 
 
 
-
+/* nav */
+.project {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 18px;
+  font-weight: normal;
+}
 
 
 

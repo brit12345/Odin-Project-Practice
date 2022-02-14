@@ -1,3 +1,4 @@
+//Todo objects hold the data
 function* unique() {
   let id = 0;
   while(true){
@@ -50,14 +51,12 @@ class Todo {
     return this.status;
   }
   
-  changeStatus(){
-    if(this.s){
-      this.s = false;
-    } else {
-      this.s = true;
-    }
+  changeStatus(){ //this.s = !this.s?
+    this.s = !this.s
   }
+  
 }
+
 /*
 let one = new Todo("yeah", "sdkjnfnnf g w fg ewr  sda f s df", "12th idk", 5, "sdf sggwergwerg werg", true)
 let two = new Todo("sdfsdf", "d g w fg ewr  sda f s df", "12dth idk", 3, "sdf ddsggwergwerg werg", true)

@@ -1,3 +1,4 @@
+//should depend on all
 //Should I add everything to local storage, and draw everything from there? input --> array --> local storage --> array --> display
 //That way it would work when starting up and when a change is made. Less code?
 
@@ -5,6 +6,8 @@
 
 */
 
+
+DOM.eventHandlers();
 
 //using local storage, so need a way to import todo lists at the beginning and save them each time created/updated.
 
@@ -37,13 +40,7 @@ console.log(cheese)
 
 //will have an array or projects, and projects have an array of lists
 
-function saveAll() {
-  localStorage.setItem("projects", JSON.stringify(Controller.projects))
-}
 
-function getStorage() {
-  return JSON.parse(localStorage.getItem("projects")) || [];
-}
 
 function clear() { //only for using in console to unpolute the localStorage
   localStorage.clear()
