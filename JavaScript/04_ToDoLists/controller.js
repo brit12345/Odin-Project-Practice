@@ -10,8 +10,8 @@ const Controller = (() => { //application logic
     //invoke todo class, input the values from the inputs. Invoked when button pressed?
     //need to have retrieved storage at the beginning
     let temp = new Todo(Form.getTitle(), Form.getDesc(), Form.getDueDate(), Form.getPriority(), Form.getNotes())
-    projects[0][currentProject].push(temp);
-    console.log(projects[0])
+    Controller.projects[currentProject].push(temp);
+    console.log(Controller.projects)
     //let temp = getStorage()[0][proj][0] need to figure out which first 0
     //add to current project. How to tell which is current project?
     //projects are in Project array, so filter through array and go to one that has same name - have a variable 
@@ -30,7 +30,7 @@ const Controller = (() => { //application logic
   }
   
   const getStorage = function() {
-    return JSON.parse(localStorage.getItem("projects")) || [{Project: []}];
+    return JSON.parse(localStorage.getItem("projects")) || {Project: []};
   }
 
   return {

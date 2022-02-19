@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <label for="gifSearch">Search for a GIF:</label>
+  <input type="search" id="gifSearch">
+  <button type="button" id="search">Search</button>
+  <p id="status"></p>
+  <p><button type="button" id="refresh">Refresh</button></p>
+  <p id="error"></p>
+  <img src="#">
+  <script>
+    const img = document.querySelector("img");
+    const refreshBtn = document.querySelector("button#refresh");
+    const searchBtn = document.querySelector("button#search");
+    const search = document.querySelector("input")
+    const status = document.querySelector("p#status")
+    const error = document.querySelector("p#error")
+
+    let curSearch = "cats";
+    let lastImg;
+    getGif(curSearch) //default img
+    eventListeners()
+
+    function getSearch(){
+      curSearch = search.value;
+    }
+    function getGif(search){
+      status.textContent = "Working.....";
+      error.textContent = ""
+      fetch("https://api.giphy.com/v1/gifs/translate?api_key=NlsdWV3r4s7I08VNHnH44MG2zFw2Szw8&s=" + search, {mode: "cors"})
+      .then(function(response){
+        return response.json();
+      })
+      .then(function(response) {
+        if(response.data.images.original.url != lastImg){ //if it's a new image
+          img.src = response.data.images.original.url;
+          console.log("new image!")
+        } else { //retry
+          console.log("retrying...")
+          lastImg = response.data.images.original.url;
+          getGif(search)
+        }
+        console.log(response.data.images.original.url, lastImg)
+        lastImg = response.data.images.original.url;
+
+      })
+      .catch(function(err){
+        console.log(err)
+        error.textContent = "Uh oh! Seems there were no matches for your search!"
+        img.src = "https://media2.giphy.com/media/KD4o8c4e6CY2A/giphy.gif?cid=3b9908fe290bd60ebd5e588acaae8d3f46353b5ed2b8ef8d&rid=giphy.gif&ct=g"
+      })
+    }
+
+    function eventListeners() {
+      refreshBtn.addEventListener("click", () => {getGif(curSearch); status.textContent = "Working.....";});
+      searchBtn.addEventListener("click", () => {getSearch(); getGif(curSearch)})
+      img.addEventListener("load", () => status.textContent = "Done!")
+      search.addEventListener("keydown", (event) => {
+        if(event.key == "Enter"){
+          getSearch(); 
+          getGif(curSearch);
+          refreshBtn.focus();
+        }
+      })
+    }
+  </script>
+</body>
+</html>

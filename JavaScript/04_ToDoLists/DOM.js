@@ -39,17 +39,16 @@ const DOM = (() => { //for separating DOM from other parts
     nav.appendChild(navPrj)
     //add to something___________________________________
   }
-  const createTodo = function(prj) {
+  const createTodo = function(prj, todoObject) {
     let list = document.createElement("li")
+    //all the stuff in the object?
     prj.appendChild(list)
     
   }
 
-  
   return {
     eventHandlers,
     createProject,
     createTodo
   }
 })()
-
