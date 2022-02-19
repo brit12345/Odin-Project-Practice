@@ -56,14 +56,22 @@
     }
 
     function eventListeners() {
+      let enterReset = true; //to make event only fire once
       refreshBtn.addEventListener("click", () => {getGif(curSearch); status.textContent = "Working.....";});
       searchBtn.addEventListener("click", () => {getSearch(); getGif(curSearch)})
       img.addEventListener("load", () => status.textContent = "Done!")
+      
       search.addEventListener("keydown", (event) => {
-        if(event.key == "Enter"){
+        if(event.key == "Enter" && enterReset == true){
           getSearch(); 
           getGif(curSearch);
-          refreshBtn.focus();
+          enterReset = false;
+        }
+      })
+      search.addEventListener("keyup", (event) => {
+        if(event.key == "Enter"){
+          refreshBtn.focus(); //only focus on button when keyup, otherwise it will register as a button press
+          enterReset = true;
         }
       })
     }
