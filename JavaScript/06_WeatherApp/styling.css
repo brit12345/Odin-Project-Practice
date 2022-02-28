@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  height: 25px;
+  width: 100vw;
+  background: linear-gradient(rgba(0,255,255, 0.7), rgba(255, 255, 255, 0.2) 90%), white;
+  position: fixed;
+  top: 0;
+  padding: 35px;
+}
+
+div#img {
+  width: 100vw;
+  height: calc(100vh - (25px + (35px * 2)));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.temp, #wind {
+  margin-top: 5px;
+}
+
+#weather {
+  font-size: 30px;
+}
+
+div#text {
+  display: flex;
+  gap: 20px;
+}
+
+article {
+  margin-top: 100px;
+}
